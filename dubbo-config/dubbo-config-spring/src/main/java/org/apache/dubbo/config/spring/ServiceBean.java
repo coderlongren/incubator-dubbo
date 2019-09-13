@@ -105,7 +105,7 @@ public class ServiceBean<T> extends ServiceConfig<T> implements InitializingBean
         return service;
     }
 
-    //Spring容器初始化完成，调用
+    //Spring容器初始化完成，调用, 实现了ApplicationListener接口
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
         if (!isExported() && !isUnexported()) {
