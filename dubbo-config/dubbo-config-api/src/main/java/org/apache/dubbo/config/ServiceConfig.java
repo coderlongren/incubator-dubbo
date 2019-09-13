@@ -279,6 +279,7 @@ public class ServiceConfig<T> extends AbstractServiceConfig {
         return urls;
     }
 
+    // 是否延迟发布
     @Parameter(excluded = true)
     public boolean isExported() {
         return exported;
