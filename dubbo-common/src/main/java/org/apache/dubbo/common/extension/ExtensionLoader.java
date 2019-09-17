@@ -195,7 +195,6 @@ public class ExtensionLoader<T> {
         String value = url.getParameter(key);
         return getActivateExtension(url, StringUtils.isEmpty(value) ? null : COMMA_SPLIT_PATTERN.split(value), group);
     }
-
     /**
      * Get activate extensions.
      *
@@ -724,8 +723,10 @@ public class ExtensionLoader<T> {
                     type + ", class line: " + clazz.getName() + "), class "
                     + clazz.getName() + " is not subtype of interface.");
         }
+        // 扩展类的缓存分类
         if (clazz.isAnnotationPresent(Adaptive.class)) {
             cacheAdaptiveClass(clazz);
+            //
         } else if (isWrapperClass(clazz)) {
             cacheWrapperClass(clazz);
         } else {
@@ -789,10 +790,12 @@ public class ExtensionLoader<T> {
 
     /**
      * cache Adaptive class which is annotated with <code>Adaptive</code>
+     *  自适应扩展类， 只能有一个，
      */
     private void cacheAdaptiveClass(Class<?> clazz) {
         if (cachedAdaptiveClass == null) {
             cachedAdaptiveClass = clazz;
+            //多个自适应类 ,抛异常
         } else if (!cachedAdaptiveClass.equals(clazz)) {
             throw new IllegalStateException("More than 1 adaptive class found: "
                     + cachedAdaptiveClass.getClass().getName()
