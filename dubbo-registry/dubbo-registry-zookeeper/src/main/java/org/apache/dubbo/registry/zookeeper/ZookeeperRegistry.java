@@ -60,6 +60,9 @@ public class ZookeeperRegistry extends FailbackRegistry {
 
     private final static Logger logger = LoggerFactory.getLogger(ZookeeperRegistry.class);
 
+    /**
+     *  注册到zk中的根节点
+     */
     private final static String DEFAULT_ROOT = "dubbo";
 
     private final String root;

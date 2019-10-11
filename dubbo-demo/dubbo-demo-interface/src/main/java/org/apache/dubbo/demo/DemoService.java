@@ -16,6 +16,9 @@
  */
 package org.apache.dubbo.demo;
 
+import org.apache.dubbo.common.extension.SPI;
+
+@SPI("dubbo")
 public interface DemoService {
 
     String sayHello(String name);

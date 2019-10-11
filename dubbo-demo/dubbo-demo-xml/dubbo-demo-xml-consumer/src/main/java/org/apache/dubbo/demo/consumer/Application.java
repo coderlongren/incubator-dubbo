@@ -18,13 +18,20 @@ package org.apache.dubbo.demo.consumer;
 
 import org.apache.dubbo.demo.DemoService;
 
+import org.apache.dubbo.rpc.RpcContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Application {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring/dubbo-consumer.xml");
         context.start();
         DemoService demoService = context.getBean("demoService", DemoService.class);
+        Map<String, String> attachments = new HashMap<>();
+        attachments.put("tarceId", "12345");
+        RpcContext.getContext().setAttachments(attachments);
         String hello = demoService.sayHello("world");
         System.out.println("result: " + hello);
     }

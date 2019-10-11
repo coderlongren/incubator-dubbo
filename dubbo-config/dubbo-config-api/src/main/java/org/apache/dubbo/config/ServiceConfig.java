@@ -573,10 +573,12 @@ public class ServiceConfig<T> extends AbstractServiceConfig {
         if (!SCOPE_NONE.equalsIgnoreCase(scope)) {
 
             // export to local if the config is not remote (export to remote only when config is remote)
+            //本地 injvm导出
             if (!SCOPE_REMOTE.equalsIgnoreCase(scope)) {
                 exportLocal(url);
             }
             // export to remote if the config is not local (export to local only when config is local)
+            // 远程导出
             if (!SCOPE_LOCAL.equalsIgnoreCase(scope)) {
                 if (CollectionUtils.isNotEmpty(registryURLs)) {
                     for (URL registryURL : registryURLs) {

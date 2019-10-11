@@ -861,7 +861,12 @@ public class ExtensionLoader<T> {
         }
     }
 
+    /**
+     *  获取 Adaptive 实现类
+     * @return
+     */
     private Class<?> getAdaptiveExtensionClass() {
+        // 获取 SPI的所有扩展类
         getExtensionClasses();
         if (cachedAdaptiveClass != null) {
             return cachedAdaptiveClass;
