@@ -18,6 +18,7 @@
  */
 package org.apache.dubbo.demo.provider;
 
+import org.apache.dubbo.common.URL;
 import org.apache.dubbo.config.annotation.Service;
 import org.apache.dubbo.demo.DemoService;
 import org.apache.dubbo.rpc.RpcContext;
@@ -30,7 +31,7 @@ public class DemoServiceImpl implements DemoService {
     private static final Logger logger = LoggerFactory.getLogger(DemoServiceImpl.class);
 
     @Override
-    public String sayHello(String name) {
+    public String sayHello(String name, URL url) {
         logger.info("Hello " + name + ", request from consumer: " + RpcContext.getContext().getRemoteAddress());
         return "Hello " + name + ", response from provider: " + RpcContext.getContext().getLocalAddress();
     }

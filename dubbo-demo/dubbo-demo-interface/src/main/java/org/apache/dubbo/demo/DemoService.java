@@ -16,11 +16,13 @@
  */
 package org.apache.dubbo.demo;
 
+import org.apache.dubbo.common.URL;
+import org.apache.dubbo.common.extension.Adaptive;
 import org.apache.dubbo.common.extension.SPI;
 
 @SPI("dubbo")
 public interface DemoService {
-
-    String sayHello(String name);
+    @Adaptive
+    String sayHello(String name, URL url);
 
 }

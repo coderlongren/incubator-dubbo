@@ -331,6 +331,7 @@ public class DubboProtocol extends AbstractProtocol {
         }
     }
 
+    // 创建 链接
     private ExchangeServer createServer(URL url) {
         url = URLBuilder.from(url)
                 // send readonly event when server closes, it's enabled by default

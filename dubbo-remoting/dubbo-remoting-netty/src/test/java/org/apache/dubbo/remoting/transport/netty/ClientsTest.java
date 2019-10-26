@@ -46,6 +46,7 @@ public class ClientsTest {
             String name = null;
             ExtensionLoader.getExtensionLoader(Transporter.class).getExtension(name);
         });
+        ExtensionLoader.getExtensionLoader(Transporter.class).getExtension(null);
     }
 
     @Test
