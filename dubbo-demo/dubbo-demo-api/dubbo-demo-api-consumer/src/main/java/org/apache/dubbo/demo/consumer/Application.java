@@ -18,6 +18,7 @@
  */
 package org.apache.dubbo.demo.consumer;
 
+import org.apache.dubbo.common.URL;
 import org.apache.dubbo.config.ApplicationConfig;
 import org.apache.dubbo.config.ReferenceConfig;
 import org.apache.dubbo.config.RegistryConfig;
@@ -30,7 +31,7 @@ public class Application {
         reference.setRegistry(new RegistryConfig("zookeeper://127.0.0.1:2181"));
         reference.setInterface(DemoService.class);
         DemoService service = reference.get();
-        String message = service.sayHello("dubbo");
+        String message = service.sayHello("dubbo", URL.valueOf("aa:aa"));
         System.out.println(message);
     }
 }

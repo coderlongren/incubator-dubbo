@@ -35,7 +35,7 @@ import java.io.OutputStream;
 @SPI("hessian2")
 public interface Serialization {
 
-    /**
+    /**ss
      * Get content type unique id, recommended that custom implementations use values greater than 20.
      *
      * @return content type id

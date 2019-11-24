@@ -11,10 +11,11 @@ public class DubboSPITest {
                 ExtensionLoader.getExtensionLoader(DemoService.class);
         DemoService demoService = extensionLoader.getAdaptiveExtension();
         URL url = URL.valueOf("sdsds");
-//        DemoService defaultService = extensionLoader.getDefaultExtension();
+//        DemoService demoService = extensionLoader.getExtension("dubboDemoService");
         demoService.sayHello("", url);
 //        defaultService.sayHello("sss");
 //        DateUtils dateUtils = new DateUtils();
 //        System.out.println(dateUtils.nowTime());
+
     }
 }

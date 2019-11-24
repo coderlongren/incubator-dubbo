@@ -19,6 +19,7 @@
 
 package org.apache.dubbo.demo.consumer.comp;
 
+import org.apache.dubbo.common.URL;
 import org.apache.dubbo.config.annotation.Reference;
 import org.apache.dubbo.demo.DemoService;
 
@@ -30,7 +31,7 @@ public class DemoServiceComponent implements DemoService {
     private DemoService demoService;
 
     @Override
-    public String sayHello(String name) {
-        return demoService.sayHello(name);
+    public String sayHello(String name, URL url) {
+        return null;
     }
 }

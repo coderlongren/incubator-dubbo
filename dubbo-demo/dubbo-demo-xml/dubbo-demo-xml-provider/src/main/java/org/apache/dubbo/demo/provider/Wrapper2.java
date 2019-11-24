@@ -16,7 +16,7 @@ public class Wrapper2 implements DemoService {
 
     @Override
     public String sayHello(String name, URL url) {
-        logger.info("我是 wrapper2 ");
+        logger.info("wrapper1包裹之前的");
         return demoService.sayHello(name, url);
     }
 }

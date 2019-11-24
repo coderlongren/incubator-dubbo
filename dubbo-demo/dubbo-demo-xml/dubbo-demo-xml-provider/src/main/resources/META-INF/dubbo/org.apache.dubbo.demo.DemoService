@@ -1,4 +1,5 @@
 dubboDemoService=org.apache.dubbo.demo.provider.DubboDemoService
 dubbo=org.apache.dubbo.demo.provider.DemoServiceImpl
+wrapper1=org.apache.dubbo.demo.provider.Wrapper1
 wrapper2=org.apache.dubbo.demo.provider.Wrapper2
-typeDemoServiceWrapper=org.apache.dubbo.demo.provider.TypeDemoServiceWrapper
+# adaptive=org.apache.dubbo.demo.provider.AdaptiveDemoServiceImpl
